@@ -1,0 +1,190 @@
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.form input[type="text"] {
+  flex: 1 1 200px;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.1s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.form button {
+  background-color: #007bff;
+  color: white;
+}
+
+.form button:hover {
+  background-color: #0056b3;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+}
+
+.task-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  transition: background-color 0.3s, opacity 0.3s;
+}
+
+.task-list li:hover {
+  background-color: #f1f1f1;
+}
+
+.task-list li.deleting {
+  opacity: 0;
+}
+
+.task-list li.saved {
+  background-color: #e0ffe0;
+  transition: background-color 0.5s;
+}
+
+.task-details {
+  flex: 1;
+  max-width: 70%; /* Ограничиваем ширину полей */
+  margin-right: 20px; /* Добавляем отступ справа, чтобы кнопки не перекрывали */
+}
+
+.task-details input[type="text"] {
+  width: 100%;
+  margin-bottom: 5px;
+  padding: 5px;
+  background-color: #f0f8ff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.description {
+  font-size: 0.9em;
+  color: #666;
+  margin: 5px 0 0 0;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.task-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0; /* Предотвращаем сжатие кнопок */
+}
+
+.edit-actions {
+  display: flex;
+  gap: 5px;
+}
+
+.edit-actions button:first-child {
+  background-color: #28a745;
+}
+
+.edit-actions button:last-child {
+  background-color: #dc3545;
+}
+
+.edit-actions button:first-child:hover {
+  background-color: #218838;
+}
+
+.edit-actions button:last-child:hover {
+  background-color: #c82333;
+}
+
+.task-actions button {
+  background-color: #007bff;
+  color: white;
+}
+
+.task-actions button:hover {
+  background-color: #0056b3;
+}
+
+.invalid {
+  border: 1px solid red;
+}
+
+.checkbox-label {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+
+.checkbox-label input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  transition: all 0.3s;
+}
+
+.checkbox-label input:checked ~ .checkmark {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.checkmark.checked::after {
+  content: '\2713';
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  color: white;
+  font-size: 14px;
+}
